@@ -1,0 +1,8 @@
+[flavor]
+# dark = "dracula"
+# dark = "catppuccin-macchiato"
+# dark = "kanagawa"
+dark = "gruvbox-material"
+# dark = "nord"
+# dark = "everforest-medium"
+light = "kanagawa"
