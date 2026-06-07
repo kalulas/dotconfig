@@ -1,0 +1,44 @@
+" 继承 defaults 默认配置（目前没发现必要性）
+" source $VIMRUNTIME/defaults.vim
+
+" 字符编码
+set encoding=utf-8
+scriptencoding utf-8
+
+" 显示行号
+set number
+
+" 超出屏幕部分直接截断，不换到下一行
+set nowrap
+set sidescroll=1 " 横向移动只移动 1 列
+set sidescrolloff=4 " 光标距离左右边缘保持 4 列
+
+" 搜索大小写不敏感
+set ignorecase
+set smartcase " 含大写字母时转为大小写敏感
+
+" 空白字符渲染 + 行尾标记
+set list
+set listchars=tab:→\ ,space:·,trail:·,extends:›,precedes:‹,nbsp:␣,eol:↓
+
+" 换行格式判别
+set laststatus=2
+set statusline=%<%f\ %m%r%=[%{&fenc!=''?&fenc:&enc}]\ [%{&ff}]\ %l:%c\ %P
+
+" 启用光标行，且只高亮行号，不给整行加底色
+set cursorline
+set cursorlineopt=number
+
+" 低调配色：行号 / 空白标记 / 状态栏
+" 行号(LineNr=普通行号, CursorLineNr=光标所在行号)
+highlight LineNr       cterm=NONE ctermfg=242 gui=NONE guifg=#6c6c6c
+highlight CursorLineNr cterm=bold ctermfg=250 gui=bold guifg=#bcbcbc
+
+" 空白标记(NonText=eol/extends/precedes, SpecialKey=tab/trail/nbsp/space)
+highlight NonText      cterm=NONE ctermfg=238 gui=NONE guifg=#444444
+highlight SpecialKey   cterm=NONE ctermfg=238 gui=NONE guifg=#444444
+
+" 状态栏(StatusLine=当前窗口, StatusLineNC=非活动窗口)
+highlight StatusLine   cterm=NONE ctermbg=236 ctermfg=245 gui=NONE guibg=#303030 guifg=#8a8a8a
+highlight StatusLineNC cterm=NONE ctermbg=234 ctermfg=242 gui=NONE guibg=#1c1c1c guifg=#6c6c6c
+
